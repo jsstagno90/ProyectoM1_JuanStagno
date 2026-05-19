@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Paleta de color</title>
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Generador paletas de color</h1>
+
+    <p>
+      Genera paletas de colores aleatorias para tus proyectos.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="controls">
+
+      <div class="control-group">
+        <label for="palette-size">
+          Tamaño de paleta
+        </label>
+
+        <select id="palette-size">
+          <option value="6">6 colores</option>
+          <option value="8">8 colores</option>
+          <option value="9">9 colores</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="color-format">
+          Formato de color
+        </label>
+
+        <select id="color-format">
+          <option value="hex">HEX</option>
+          <option value="hsl">HSL</option>
+        </select>
+      </div>
+
+      <button id="generate-btn">
+        Generar paleta
+      </button>
+
+    </section>
+
+    <section class="palette-section">
+
+      <div class="palette-container">
+
+        <!-- Los colores se renderizan dinámicamente -->
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      Proyecto Integrador 1- Soy Henry
+    </p>
+  </footer>
+
+  <script src="./js/app.js"></script>
+
+</body>
+</html>
