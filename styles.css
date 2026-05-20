@@ -87,12 +87,11 @@ button:hover {
     background-color: #062a8d;
 }
 
-.palette-container {
+#palette-container {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-
-    gap: 1rem;
+    gap: 10rem;
 }
 
 .color-card {
