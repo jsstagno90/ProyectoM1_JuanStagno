@@ -30,6 +30,21 @@ La aplicación permite generar paletas de colores aleatorias en distintos format
 
 ---
 
+# 🧭 Cómo usar la aplicación
+
+1. Selecciona la cantidad de colores que deseas generar.
+2. Elige el formato de color:
+   - HEX
+   - RGB
+3. Haz clic en el botón **"Generar paleta"**.
+4. La aplicación mostrará automáticamente una nueva paleta de colores aleatorios.
+5. Cada caja mostrará visualmente el color y su código correspondiente.
+6. Si deseas copiar un color, solo haz clic sobre la caja del color que quieras copiar.
+7. Puedes generar nuevas combinaciones todas las veces que quieras.
+
+---
+
+
 # 📂 Estructura del proyecto
 
 ProyectoM1_JuanStagno/
@@ -47,3 +62,6 @@ ProyectoM1_JuanStagno/
 │   └── README.md
 │ 
 ├── .gitignore
+
+
+
