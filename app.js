@@ -4,7 +4,7 @@ const cantidadSelect = document.getElementById("cantidad");
 const formatoSelect = document.getElementById("formato");
 
 const btnGenerar = document.getElementById("btnGenerar");
-const mensajeCopiado = document.getElementById("mensaje-copiado");
+const toast = document.getElementById("toast");
 let mensajeTimeout;
 
 function generarColorHEX() {
@@ -61,17 +61,19 @@ function crearPaleta() {
     colorBox.addEventListener("click", () => {
       navigator.clipboard.writeText(color)
         .then(() => {
-          mensajeCopiado.textContent = "¡Color copiado!";
+          toast.textContent = "¡Color copiado!";
+          toast.classList.add("show");
           clearTimeout(mensajeTimeout);
           mensajeTimeout = setTimeout(() => {
-            mensajeCopiado.textContent = "";
+            toast.classList.remove("show");
           }, 2000);
         })
         .catch(() => {
-          mensajeCopiado.textContent = "No se pudo copiar.";
+          toast.textContent = "No se pudo copiar.";
+          toast.classList.add("show");
           clearTimeout(mensajeTimeout);
           mensajeTimeout = setTimeout(() => {
-            mensajeCopiado.textContent = "";
+            toast.classList.remove("show");
           }, 2000);
         });
     });

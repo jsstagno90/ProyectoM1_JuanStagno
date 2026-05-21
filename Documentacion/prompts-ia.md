@@ -63,6 +63,6 @@ Necesito hacer que las cajas de colores le pueda copiar el codigo del color al h
 
 Agrego lineas a:
 
-- index.html 
-- syles.css 
-- app.js 
+- index.html
+- syles.css
+- app.js
