@@ -70,6 +70,8 @@ button:hover {
     border-radius: 12px;
 
     display: flex;
+    flex-direction: column;
+    gap: 6px;
     justify-content: center;
     align-items: center;
 
@@ -115,4 +117,10 @@ button:hover {
 
 #toast.show {
     top: 20px;
+}
+
+.color-box .sub-code {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.9;
 }

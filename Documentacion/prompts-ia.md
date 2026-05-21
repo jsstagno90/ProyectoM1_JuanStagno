@@ -66,3 +66,13 @@ Agrego lineas a:
 - index.html
 - syles.css
 - app.js
+
+
+#### Prompt 4
+
+necesito que cuando se genere el color, se genere el otro codigo abajo pero mas chiquito, ejemplo: HEX A1B2C3 y abajo el color en hsl pero mas chiquito, y visceversa
+
+
+#### Resultado 4
+
+Agrega ambos codigos del color HSL y HEX
