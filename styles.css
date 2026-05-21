@@ -99,8 +99,8 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
 
-    background-color: #28a745;
-    color: white;
+    background-color: #54866048;
+    color: rgb(127, 225, 133);
 
     padding: 15px 30px;
     border-radius: 10px;
