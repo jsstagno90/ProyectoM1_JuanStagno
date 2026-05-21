@@ -76,3 +76,4 @@ necesito que cuando se genere el color, se genere el otro codigo abajo pero mas 
 #### Resultado 4
 
 Agrega ambos codigos del color HSL y HEX
+

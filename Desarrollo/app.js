@@ -6,6 +6,7 @@ const formatoSelect = document.getElementById("formato");
 const btnGenerar = document.getElementById("btnGenerar");
 const toast = document.getElementById("toast");
 let mensajeTimeout;
+let lockedColors = []; // store locked color objects per index
 
 function generarColorHEX() {
 
@@ -105,45 +106,100 @@ function hslStringToHex(hslStr) {
 
 function crearPaleta() {
 
-  paletteContainer.innerHTML = "";
-
-  const cantidad = cantidadSelect.value;
+  // Ajustar array de candados a la nueva cantidad
+  const cantidad = parseInt(cantidadSelect.value, 10);
   const formato = formatoSelect.value;
 
-  for (let i = 0; i < cantidad; i++) {
+  if (lockedColors.length > cantidad) {
+    lockedColors = lockedColors.slice(0, cantidad);
+  }
+  while (lockedColors.length < cantidad) {
+    lockedColors.push(null);
+  }
 
+  paletteContainer.innerHTML = "";
+
+  for (let i = 0; i < cantidad; i++) {
     const colorBox = document.createElement("div");
     colorBox.classList.add("color-box");
+    colorBox.dataset.index = i;
 
-    let color;
-    let mainText = "";
-    let subText = "";
+    let displayMain = "";
+    let displaySub = "";
+    let cssColor = "";
 
-    if (formato === "hex") {
-      color = generarColorHEX();
-      mainText = `HEX ${color}`;
-      subText = hexToHsl(color);
+    const locked = lockedColors[i];
+    if (locked) {
+      // Use the locked color exactly as it was when locked
+      displayMain = locked.displayMain;
+      displaySub = locked.displaySub;
+      cssColor = locked.cssColor;
+      colorBox.classList.add("locked");
     } else {
-      color = generarColorHSL();
-      mainText = color; // already like 'HSL(h, s%, l%)'
-      subText = `HEX ${hslStringToHex(color)}`;
+      // Generate new color according to current formato
+      if (formato === "hex") {
+        const color = generarColorHEX();
+        displayMain = `HEX ${color}`;
+        displaySub = hexToHsl(color);
+        cssColor = color;
+      } else {
+        const color = generarColorHSL();
+        displayMain = color; // 'HSL(h, s%, l%)'
+        displaySub = `HEX ${hslStringToHex(color)}`;
+        cssColor = color.replace(/^HSL/i, "hsl");
+      }
     }
 
-    const cssColor = formato === "hex" ? color : color.replace(/^HSL/i, "hsl");
     colorBox.style.backgroundColor = cssColor;
 
     const mainSpan = document.createElement("div");
     mainSpan.classList.add("color-code");
-    mainSpan.textContent = mainText;
+    mainSpan.textContent = displayMain;
 
     const subSpan = document.createElement("div");
     subSpan.classList.add("sub-code");
-    subSpan.textContent = subText;
+    subSpan.textContent = displaySub;
 
+    // Botón candado
+    const lockBtn = document.createElement("button");
+    lockBtn.classList.add("lock-btn");
+    lockBtn.title = "Bloquear color";
+    lockBtn.innerText = locked ? "🔒" : "🔓";
+    lockBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const idx = Number(colorBox.dataset.index);
+      if (lockedColors[idx]) {
+        // desbloquear
+        lockedColors[idx] = null;
+        colorBox.classList.remove("locked");
+        lockBtn.innerText = "🔓";
+        toast.textContent = "Color desbloqueado";
+      } else {
+        // bloquear - guardar estado exacto mostrado
+        lockedColors[idx] = {
+          displayMain: mainSpan.textContent,
+          displaySub: subSpan.textContent,
+          cssColor: cssColor,
+        };
+        colorBox.classList.add("locked");
+        lockBtn.innerText = "🔒";
+        toast.textContent = "Color bloqueado";
+      }
+      toast.classList.add("show");
+      clearTimeout(mensajeTimeout);
+      mensajeTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1500);
+    });
+
+    colorBox.appendChild(lockBtn);
     colorBox.appendChild(mainSpan);
     colorBox.appendChild(subSpan);
+
     colorBox.addEventListener("click", () => {
-      navigator.clipboard.writeText(color)
+      // Copiar el valor principal (HEX o HSL dependiendo de cómo fue mostrado)
+      const textToCopy = mainSpan.textContent.includes("HEX") ? mainSpan.textContent.split(" ")[1] : mainSpan.textContent;
+      navigator.clipboard.writeText(textToCopy)
         .then(() => {
           toast.textContent = "¡Color copiado!";
           toast.classList.add("show");
@@ -161,6 +217,7 @@ function crearPaleta() {
           }, 2000);
         });
     });
+
     paletteContainer.appendChild(colorBox);
   }
 }
