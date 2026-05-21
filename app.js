@@ -4,64 +4,81 @@ const cantidadSelect = document.getElementById("cantidad");
 const formatoSelect = document.getElementById("formato");
 
 const btnGenerar = document.getElementById("btnGenerar");
+const mensajeCopiado = document.getElementById("mensaje-copiado");
+let mensajeTimeout;
 
 function generarColorHEX() {
 
-    const caracteres = "0123456789ABCDEF";
+  const caracteres = "0123456789ABCDEF";
 
-    let color = "#";
+  let color = "#";
 
-    for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 6; i++) {
 
-        const numeroRandom = Math.floor(Math.random() * 16);
+    const numeroRandom = Math.floor(Math.random() * 16);
 
-        color += caracteres[numeroRandom];
-    }
+    color += caracteres[numeroRandom];
+  }
 
-    return color;
+  return color;
 }
 
 function generarColorHSL() {
 
-    const h = Math.floor(Math.random() * 360);
+  const h = Math.floor(Math.random() * 360);
 
-    const s = Math.floor(Math.random() * 100);
+  const s = Math.floor(Math.random() * 100);
 
-    const l = Math.floor(Math.random() * 100);
+  const l = Math.floor(Math.random() * 100);
 
-    return `hsl(${h}, ${s}%, ${l}%)`;
+  return `hsl(${h}, ${s}%, ${l}%)`;
 }
 
 function crearPaleta() {
 
-    paletteContainer.innerHTML = "";
+  paletteContainer.innerHTML = "";
 
-    const cantidad = cantidadSelect.value;
-    const formato = formatoSelect.value;
+  const cantidad = cantidadSelect.value;
+  const formato = formatoSelect.value;
 
-    for (let i = 0; i < cantidad; i++) {
+  for (let i = 0; i < cantidad; i++) {
 
-        const colorBox = document.createElement("div");
-        colorBox.classList.add("color-box");
+    const colorBox = document.createElement("div");
+    colorBox.classList.add("color-box");
 
-        let color;
+    let color;
 
-        if (formato === "hex") {
+    if (formato === "hex") {
 
-            color = generarColorHEX();
+      color = generarColorHEX();
 
-        } else {
-            color = generarColorHSL();
-        }
-
-        colorBox.style.backgroundColor = color;
-        colorBox.textContent = color;
-        paletteContainer.appendChild(colorBox);
+    } else {
+      color = generarColorHSL();
     }
+
+    colorBox.style.backgroundColor = color;
+    colorBox.textContent = color;
+    colorBox.addEventListener("click", () => {
+      navigator.clipboard.writeText(color)
+        .then(() => {
+          mensajeCopiado.textContent = "¡Color copiado!";
+          clearTimeout(mensajeTimeout);
+          mensajeTimeout = setTimeout(() => {
+            mensajeCopiado.textContent = "";
+          }, 2000);
+        })
+        .catch(() => {
+          mensajeCopiado.textContent = "No se pudo copiar.";
+          clearTimeout(mensajeTimeout);
+          mensajeTimeout = setTimeout(() => {
+            mensajeCopiado.textContent = "";
+          }, 2000);
+        });
+    });
+    paletteContainer.appendChild(colorBox);
+  }
 }
 
-
 btnGenerar.addEventListener("click", crearPaleta);
-
 
 crearPaleta();

@@ -78,5 +78,24 @@ button:hover {
 
     color: white;
 
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.color-box {
+    transition: transform 0.3s;
+}
+
+.color-box:hover {
+    transform: scale(1.07);
+}
+
+
+#mensaje-copiado {
+
+    color: #4caf50;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    margin-bottom: 1rem;
 }

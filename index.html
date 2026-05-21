@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Paletas</title>
 
-    <link rel="stylesheet" href="styles.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Paletas</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        <h1>Generador de Paletas</h1>
+    <h1>Generador de Paletas</h1>
 
-        <div class="controls">
+    <div class="controls">
 
-            <select id="cantidad">
-                <option value="6">6 colores</option>
-                <option value="8">8 colores</option>
-                <option value="9">9 colores</option>
-            </select>
+      <select id="cantidad">
+        <option value="6">6 colores</option>
+        <option value="8">8 colores</option>
+        <option value="9">9 colores</option>
+      </select>
 
-            <select id="formato">
-                <option value="hex">HEX</option>
-                <option value="hsl">HSL</option>
-            </select>
+      <select id="formato">
+        <option value="hex">HEX</option>
+        <option value="hsl">HSL</option>
+      </select>
 
-            <button id="btnGenerar">
-                Generar Paleta
-            </button>
+      <button id="btnGenerar">
+        Generar Paleta
+      </button>
 
-        </div>
-
-        <div id="palette-container">
-
-        </div>
+    </div>
+    <p id="mensaje-copiado"></p>
+    <div id="palette-container">
 
     </div>
 
-    <script src="app.js"></script>
+  </div>
+
+  <script src="app.js"></script>
 </body>
+
 </html>

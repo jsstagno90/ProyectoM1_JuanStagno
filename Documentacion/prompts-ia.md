@@ -1,6 +1,6 @@
 # Documentación de uso de IA
 
-## Prompt 1
+# Prompt 1
 CONTEXTO: Estoy practicando HTML, CSS y JavaScript puro (sin frameworks).
 
 Nivel: principiante. 
@@ -28,19 +28,41 @@ Nivel: principiante.
  * Explicar brevemente qué hace cada parte del código. 
  * Incluir comentarios simples dentro del JavaScript.
 
+# Resultado
+
+- index.html completo
+- syles.css completo
+- app.js completo
+
+
+
+
+## Prompt 2
+
+pasame un estilo css para las cajas de colores, que pase el mouse por encima y se agranden un poquito
+
+## Resultado
+
+.color-box {
+    transition: transform 0.3s;
+}
+
+.color-box:hover {
+    transform: scale(1.07);
+}
+
+
+
+
+### Prompt 3
+
+Necesito hacer que las cajas de colores le pueda copiar el codigo del color al hacer click, que aparezca un cartelito html arriba en verde por unos segundos que diga, Color copiado!
+
+
 ### Resultado
 
-La IA propuso:
-- El index.html completo
-- El index.html completo
-- El index.html completo
+Agrego lineas a:
 
-
-
-
-
-
-## Prompt 3
-
-"Genera estilos CSS modernos y responsivos para una aplicación web de paletas de colores"
-
+- index.html 
+- syles.css 
+- app.js 
