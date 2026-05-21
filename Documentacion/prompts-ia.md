@@ -28,7 +28,7 @@ Nivel: principiante.
  * Explicar brevemente qué hace cada parte del código. 
  * Incluir comentarios simples dentro del JavaScript.
 
-# Resultado
+# Resultado 1
 
 - index.html completo
 - syles.css completo
@@ -37,11 +37,11 @@ Nivel: principiante.
 
 
 
-## Prompt 2
+# Prompt 2
 
 pasame un estilo css para las cajas de colores, que pase el mouse por encima y se agranden un poquito
 
-## Resultado
+# Resultado 2
 
 .color-box {
     transition: transform 0.3s;
@@ -54,12 +54,12 @@ pasame un estilo css para las cajas de colores, que pase el mouse por encima y s
 
 
 
-### Prompt 3
+# Prompt 3
 
 Necesito hacer que las cajas de colores le pueda copiar el codigo del color al hacer click, que aparezca un cartelito html arriba en verde por unos segundos que diga, Color copiado!
 
 
-### Resultado
+# Resultado 3
 
 Agrego lineas a:
 
@@ -68,12 +68,20 @@ Agrego lineas a:
 - app.js
 
 
-#### Prompt 4
+# Prompt 4
 
 necesito que cuando se genere el color, se genere el otro codigo abajo pero mas chiquito, ejemplo: HEX A1B2C3 y abajo el color en hsl pero mas chiquito, y visceversa
 
 
-#### Resultado 4
+# Resultado 4
 
 Agrega ambos codigos del color HSL y HEX
 
+
+# Prompt 5
+
+como puedo hacer para bloquear un color? osea cuando se generen los colores q aparezca un candadito y si lo apreto despues ese color queda bloqueado y se generan todos los otros
+
+# Resultado 5
+-pensemos la lógica
+-codigo html y js
