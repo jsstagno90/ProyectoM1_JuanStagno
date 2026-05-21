@@ -1,83 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Paletas</title>
 
-  <title>Paleta de color</title>
-
-  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <header class="header">
-    <h1>Generador paletas de color</h1>
+    <div class="container">
 
-    <p>
-      Genera paletas de colores aleatorias para tus proyectos.
-    </p>
-  </header>
+        <h1>Generador de Paletas</h1>
 
-  <main>
+        <!-- Selector de cantidad -->
+        <div class="controls">
 
-    <section class="controls">
+            <select id="cantidad">
+                <option value="6">6 colores</option>
+                <option value="8">8 colores</option>
+                <option value="9">9 colores</option>
+            </select>
 
-      <div class="control-group">
-        <label for="palette-size">
-          Tamaño de paleta
-        </label>
+            <!-- Selector de formato -->
+            <select id="formato">
+                <option value="hex">HEX</option>
+                <option value="hsl">HSL</option>
+            </select>
 
-        <select id="palette-size">
-          <option value="6">6 colores</option>
-          <option value="8">8 colores</option>
-          <option value="9">9 colores</option>
-        </select>
-      </div>
+            <!-- Botón -->
+            <button id="btnGenerar">
+                Generar Paleta
+            </button>
 
-      <div class="control-group">
-        <label for="color-format">
-          Formato de color
-        </label>
+        </div>
 
-        <select id="color-format">
-          <option value="hex">HEX</option>
-          <option value="hsl">HSL</option>
-        </select>
-      </div>
+        <!-- Contenedor de colores -->
+        <div id="palette-container">
 
-      <button id="generate-btn">
-        Generar paleta
-      </button>
+        </div>
 
-    </section>
+    </div>
 
-    <section class="palette-section">
-
-      <div id="palette-container">
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <div class="color-box"></div>
-        <!-- Los colores se renderizan dinámicamente -->
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>
-      Proyecto Integrador 1- Soy Henry
-    </p>
-  </footer>
-
-  <script src="app.js"></script>
-
+    <script src="app.js"></script>
 </body>
-
 </html>

@@ -1,37 +1,102 @@
-const paletteSize = document.getElementById("palette-size");
-const colorFormat = document.getElementById("color-format");
-const generateBtn = document.getElementById("generate-btn");
-const paletteContainer = document.getElementById("palette-container");  
+// Contenedor donde van las cajas
+const paletteContainer = document.getElementById("palette-container");
+
+// Selects
+const cantidadSelect = document.getElementById("cantidad");
+const formatoSelect = document.getElementById("formato");
+
+// Botón
+const btnGenerar = document.getElementById("btnGenerar");
 
 
-function generateHexColor() {
-  const hexChars = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += hexChars.charAt(Math.floor(Math.random() * hexChars.length));
-  }
-  return color;
+// -----------------------------
+// FUNCIÓN PARA COLOR HEX
+// -----------------------------
+function generarColorHEX() {
+
+    const caracteres = "0123456789ABCDEF";
+
+    let color = "#";
+
+    // Genera 6 caracteres aleatorios
+    for (let i = 0; i < 6; i++) {
+
+        const numeroRandom = Math.floor(Math.random() * 16);
+
+        color += caracteres[numeroRandom];
+    }
+
+    return color;
 }
 
-function generateRGBColor() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r}, ${g}, ${b})`;
-}       
+
+// -----------------------------
+// FUNCIÓN PARA COLOR HSL
+// -----------------------------
+function generarColorHSL() {
+
+    const h = Math.floor(Math.random() * 360);
+
+    const s = Math.floor(Math.random() * 100);
+
+    const l = Math.floor(Math.random() * 100);
+
+    return `hsl(${h}, ${s}%, ${l}%)`;
+}
 
 
+// -----------------------------
+// CREAR PALETA
+// -----------------------------
+function crearPaleta() {
 
-generateBtn.addEventListener("click", () => {
-    paletteContainer.innerHTML = ""; // Limpiar la paleta anterior
-    const size = parseInt(paletteSize.value);
-    const format = colorFormat.value;
-    for (let i = 0; i < size; i++) {
-        const color = format === "hex" ? generateHexColor() : generateRGBColor();
+    // Limpiar cajas anteriores
+    paletteContainer.innerHTML = "";
+
+    // Cantidad elegida
+    const cantidad = cantidadSelect.value;
+
+    // Formato elegido
+    const formato = formatoSelect.value;
+
+    // Crear cajas
+    for (let i = 0; i < cantidad; i++) {
+
+        // Crear div
         const colorBox = document.createElement("div");
-        colorBox.className = "color-box";
+
+        // Agregar clase
+        colorBox.classList.add("color-box");
+
+        let color;
+
+        // Elegir formato
+        if (formato === "hex") {
+
+            color = generarColorHEX();
+
+        } else {
+
+            color = generarColorHSL();
+        }
+
+        // Aplicar color
         colorBox.style.backgroundColor = color;
+
+        // Mostrar texto del color
         colorBox.textContent = color;
+
+        // Agregar caja al contenedor
         paletteContainer.appendChild(colorBox);
     }
-});
+}
+
+
+// -----------------------------
+// EVENTO BOTÓN
+// -----------------------------
+btnGenerar.addEventListener("click", crearPaleta);
+
+
+// Generar una paleta al cargar
+crearPaleta();
