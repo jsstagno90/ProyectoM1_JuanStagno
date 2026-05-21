@@ -1,34 +1,42 @@
 # Documentación de uso de IA
 
 ## Prompt 1
+CONTEXTO: Estoy practicando HTML, CSS y JavaScript puro (sin frameworks).
 
-"Cómo estructurar un proyecto frontend profesional utilizando ramas feature, develop y main en Git"
+Nivel: principiante. 
+
+ OBJETIVO: Crear una página generadora de paletas de colores aleatorios usando manipulación del DOM. INSTRUCCIONES: 
+ 1. Crear dinámicamente cajas de colores. 
+ 2. El usuario debe poder elegir generar 6, 8 o 9 colores. 
+ 3. Cada caja debe tener un color aleatorio distinto. 
+ 4. Mostrar dentro de cada caja el valor del color generado. 
+ 5. Permitir elegir entre colores en formato HEX o HSL. 
+ 6. Agregar un botón para generar una nueva paleta. 
+ 7. Usar addEventListener y manipulación del DOM. 
+ 8. Mostrar las cajas usando CSS Grid responsive. 
+ 9. Centrar el contenido de la página. 
+
+ RESTRICCIONES: 
+ * No usar frameworks ni librerías. 
+ * No usar APIs externas ni fetch. * Usar únicamente HTML, CSS y JavaScript puro. 
+ * Mantener el código simple y entendible para principiantes. 
+ * Usar buenas prácticas básicas de indentación y nombres de variables. FORMATO DE LA 
+ 
+ RESPUESTA: 
+
+ * Separar HTML, CSS y JavaScript. 
+ * Explicar brevemente qué hace cada parte del código. 
+ * Incluir comentarios simples dentro del JavaScript.
 
 ### Resultado
 
-Se recomendó utilizar:
-- main para producción
-- develop para integración
-- feature/* para funcionalidades individuales
+La IA propuso:
+- El index.html completo
+- El index.html completo
+- El index.html completo
 
 
----------------------------------------------------------------------------------------------------------------------
 
-## Prompt 2
-
-"Genera una estructura HTML semántica para una aplicación generadora de paletas de colores"
-
-### Resultado
-
-La IA sugirió utilizar:
-- header
-- main
-- section
-- footer
-- labels asociados a selects
-
-
----------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -36,10 +44,3 @@ La IA sugirió utilizar:
 
 "Genera estilos CSS modernos y responsivos para una aplicación web de paletas de colores"
 
-### Resultado
-
-La IA propuso:
-- diseño dark mode
-- grid responsive
-- tarjetas con border-radius
-- botones con hover

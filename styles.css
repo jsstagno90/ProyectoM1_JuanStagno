@@ -56,7 +56,6 @@ button:hover {
     background-color: #43a047;
 }
 
-/* GRID RESPONSIVE */
 #palette-container {
     display: grid;
 
@@ -65,7 +64,6 @@ button:hover {
     gap: 1rem;
 }
 
-/* Caja de color */
 .color-box {
     height: 180px;
 
