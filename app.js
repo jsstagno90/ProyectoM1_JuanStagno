@@ -52,12 +52,17 @@ function crearPaleta() {
 
       color = generarColorHEX();
 
+
     } else {
       color = generarColorHSL();
     }
 
     colorBox.style.backgroundColor = color;
-    colorBox.textContent = color;
+    if (formato === "hex") {
+      colorBox.textContent = `HEX ${color}`;
+    } else {
+      colorBox.textContent = color;
+    }
     colorBox.addEventListener("click", () => {
       navigator.clipboard.writeText(color)
         .then(() => {
