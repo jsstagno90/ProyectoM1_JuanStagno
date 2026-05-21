@@ -41,6 +41,7 @@ La aplicación permite generar paletas de colores aleatorias en distintos format
 5. Cada caja mostrará visualmente el color y su código correspondiente.
 6. Si deseas copiar un color, solo haz clic sobre la caja del color que quieras copiar.
 7. Puedes generar nuevas combinaciones todas las veces que quieras.
+8. PUedes bloquear un color apretando el candado.
 
 ---
 
