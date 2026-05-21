@@ -31,7 +31,7 @@ function generarColorHSL() {
 
   const l = Math.floor(Math.random() * 100);
 
-  return `hsl(${h}, ${s}%, ${l}%)`;
+  return `HSL(${h}, ${s}%, ${l}%)`;
 }
 
 function crearPaleta() {
