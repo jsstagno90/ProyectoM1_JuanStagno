@@ -1,4 +1,4 @@
-# 🎨 AAAAGenerador de Paletas de Colores
+# 🎨Generador de Paletas de Colores
 
 Aplicación web interactiva desarrollada como Proyecto Integrador para Soy Henry.
 
