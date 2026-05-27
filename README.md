@@ -45,7 +45,7 @@ La aplicación permite generar paletas de colores aleatorias en distintos format
 
 ---
 
-## 🧠 Decisiones técnicas
+# 🧠 Decisiones técnicas
 
 - Se utilizó JavaScript Vanilla para practicar manipulación del DOM sin frameworks.
 - La generación de colores se realiza dinámicamente mediante funciones aleatorias.
@@ -57,7 +57,7 @@ La aplicación permite generar paletas de colores aleatorias en distintos format
 
 ---
 
- ▶️ Cómo ejecutar el proyecto
+# ▶️ Cómo ejecutar el proyecto
 
 1. Clonar el repositorio:
 
