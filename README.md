@@ -50,23 +50,10 @@ La aplicación permite generar paletas de colores aleatorias en distintos format
 
 📁 ProyectoM1_Juan Stagno
 ├── 📄 index.html
+├── 📄 app.js
+├── 📄 styles.css
 ├── 📄 README.md
 ├── 📄 .gitignore
-│
-├── 📁 Desarrollo
-│   ├── 📄 app.js
-│   └── 📄 styles.css
-│
-├── 📁 Documentacion
-│   ├── 📁 Gif app
-│   │   └── 🎞️ App generador de paletas.mp4
-│   │
-│   └── 📁 IA
-│       ├── 🎥 App.gif.mp4
-│       ├── 🖼️ Prompt 1 HTML, CSS.png
-│       ├── 🖼️ Prompt 2.png
-│       ├── 🖼️ Prompt 3.png
-│       ├── 🖼️ Prompt 5.png
-│       ├── 🖼️ Prompt1.png
-│       └── 📄 prompts-ia.md
+
+
 
