@@ -45,6 +45,36 @@ La aplicación permite generar paletas de colores aleatorias en distintos format
 
 ---
 
+## 🧠 Decisiones técnicas
+
+- Se utilizó JavaScript Vanilla para practicar manipulación del DOM sin frameworks.
+- La generación de colores se realiza dinámicamente mediante funciones aleatorias.
+- Se implementó CSS Grid para lograr un diseño responsive adaptable a distintos tamaños de pantalla.
+- Se trabajó con Git Flow utilizando ramas `feature`, `develop` y `main`.
+- GitHub Pages fue utilizado para realizar el deploy de la aplicación.
+- Se eligió una estructura simple separando HTML, CSS y JavaScript en archivos independientes para mejorar la organización del proyecto.
+
+
+---
+
+ ▶️ Cómo ejecutar el proyecto
+
+1. Clonar el repositorio:
+
+git clone https://github.com/jsstagno90/ProyectoM1_JuanStagno.git
+
+
+
+# 🌐 Deploy
+
+La aplicación fue desplegada utilizando GitHub Pages.
+
+🔗 Demo online:
+https://jsstagno90.github.io/ProyectoM1_JuanStagno/
+
+
+---
+
 
 # 📂 Estructura del proyecto
 
